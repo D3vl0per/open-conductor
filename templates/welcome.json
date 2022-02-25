@@ -1,0 +1,15 @@
+{
+    "content": "**Üdvözöllek az eseményen!** \n\nÖrülünk, hogy csatlakoztál a Discord közösségünkhöz! \n\nAz alábbi bot parancsok állnak rendelkezésre számodra:",
+    "embed": {
+      "title": "Elérhető parancsok listája",
+      "description": "Az Open Conductor bot felel a rendezvényen való résztvevők megfelelő hitelesítéséért és a segítségével vehetitek fel a szervezőkkel a kapcsolatot, amennyiben technikai problémával találkoznátok a verseny alatt!",
+      "url": "https://admin.hu",
+      "color": 2513749,
+      "fields": [
+        {
+          "name": "Ha versenyző vagy, akkor hitelesítsd magadat az alábbi módon!",
+          "value": "/auth team: <csapat-azonosító> code: <hitelesítési-kód>"
+        }
+      ]
+    }
+}

@@ -1,0 +1,10 @@
+{
+    "content": "**Üdvözöllek a Support csatornán!** \n\nKérlek vedd figyelembe a következőket:\n1️⃣. Nem ismerjük a feladatokat és a hozzájuk tartozó flag-eket!\n2️⃣. Nem tudunk segíteni a feladat megoldásában és tippeket sem tudunk adni!\n3️⃣. Nem tudunk segíteni az elhagyott hitelesítési adatok, azonosítók pótlásában!\n\nKérlek a beszélgetés alatt tartsd be a Discord szerver és a verseny szabályzatát is!", 
+    "embed": {
+       "title": "Ticket",
+       "description": "<@XXX> által rögíztett hibajegy részletei:",
+       "color": 65280,
+       "fields": [
+       ]
+     }
+}

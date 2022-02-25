@@ -1,0 +1,9 @@
+{
+    "embed": {
+     "title": "Csapatod",
+     "description": "A csapttársaid Discord profiljai.\n\nHa nem látod az összes csapattársadat, az azt jelenti, hogy még nem léptek be a szerverre.\n",
+     "color": 1700030,
+     "fields": [
+     ]
+   }
+ }

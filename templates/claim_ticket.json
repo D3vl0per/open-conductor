@@ -1,0 +1,9 @@
+{
+    "embed": {
+    "title": "Sikeresen felvett hibajegy",
+    "description": "Az egyik szervező sikeresen felvette a hibajegyet!\n\nTrigger: <@&XXX>",
+    "color": 65280,
+    "fields": [
+    ]
+    }
+}

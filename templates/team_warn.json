@@ -1,0 +1,10 @@
+{
+    "embed": {
+      "title": "❗️ ❗️ ❗️ Figyelmeztetés ❗️ ❗️ ❗️",
+      "description": "Warn!!!",
+      "color": 16711680,
+      "thumbnail": {
+        "url": "https://link.hu"
+      }
+    }
+  }

@@ -1,0 +1,70 @@
+version: "3.7"
+services: 
+  cdb-node_1:
+    image: cockroachdb/cockroach:v21.1.8
+    volumes:
+      - ./cockroach-data/node1:/cockroach/cockroach-data
+    command: start --insecure --join=cdb-node_1,cdb-node_2,cdb-node_3   
+    networks:
+      - cockroach
+    ports:
+      - 127.0.0.1:8081:8080
+
+  cdb-node_2:
+    depends_on:
+      - cdb-node_1
+    image: cockroachdb/cockroach:v21.1.8
+    volumes:
+      - ./cockroach-data/node2:/cockroach/cockroach-data
+    command: start --insecure --join=cdb-node_1,cdb-node_2,cdb-node_3
+    networks:
+      - cockroach
+    ports:
+      - 127.0.0.1:26257:26257
+      - 127.0.0.1:8082:8080
+
+  cdb-node_3:
+    depends_on:
+      - cdb-node_1
+      - cdb-node_2
+    image: cockroachdb/cockroach:v21.1.8
+    volumes:
+      - ./cockroach-data/node3:/cockroach/cockroach-data
+    command: start --insecure --join=cdb-node_1,cdb-node_2,cdb-node_3
+    networks:
+      - cockroach
+    ports:
+      - 127.0.0.1:8083:8080
+  
+  redis:
+    image: redis:6.2.5-alpine3.14
+    restart: always
+    command: --appendonly yes
+    ports:
+      -  127.0.0.1:6379:6379
+    volumes:
+      - ./redis:/data:rw
+    environment:
+      - REDIS_REPLICATION_MODE=master
+
+  init-db-app:
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges
+    depends_on:
+      - cdb-node_1
+      - cdb-node_2
+      - cdb-node_3
+    build:
+      context: .
+      dockerfile: Dockerfile.initdb
+      shm_size: '1gb'
+    image: init-db-app:latest
+    volumes:
+      - ./initdb.sql:/initdb.sql:ro
+    networks:
+      - cockroach
+
+networks:
+  cockroach:

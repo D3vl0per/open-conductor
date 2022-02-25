@@ -1,0 +1,17 @@
+{
+    "embed": {
+       "title": "Új tag",
+       "description": ":inbox_tray: <@XXX> **csatlakozott a szerverhez**",
+       "color": 65280,
+       "author": {
+       },
+       "thumbnail": {
+         "url": "XXX"
+       },
+       "footer": {
+         "text": "ID: XXX"
+       }
+     }
+ }
+ 
+ 

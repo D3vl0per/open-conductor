@@ -1,0 +1,12 @@
+{
+    "embed": {
+      "title": "Pinging...",
+      "color": 16433673,
+      "fields": [
+        {
+          "name": "Full roundtrip",
+          "value": "**ms"
+        }
+      ]
+    }
+}

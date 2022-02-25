@@ -1,0 +1,36 @@
+{
+  "name": "open-conductor",
+  "description": "Private event manager Discord bot",
+  "version": "1.0.0",
+  "scripts": {
+    "lint": "eslint ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/D3vl0per/open-conductor.git"
+  },
+  "author": "D3vl0per <mark@zsibok.hu> (https://mark.zsibok.hu)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/D3vl0per/open-conductor/issues"
+  },
+  "dependencies": {
+    "@discordjs/builders": "^0.6.0",
+    "blake2": "^4.0.2",
+    "bufferutil": "^4.0.4",
+    "dayjs": "^1.10.7",
+    "discord-api-types": "^0.23.1",
+    "discord.js": "^13.1.0",
+    "dotenv": "^10.0.0",
+    "ioredis": "^4.27.10",
+    "pg": "^8.7.1",
+    "utf-8-validate": "^5.0.6",
+    "winston": "^3.3.3",
+    "zlib-sync": "^0.1.7"
+  },
+  "devDependencies": {
+    "@discordjs/rest": "^0.1.0-canary.0",
+    "eslint": "^7.32.0",
+    "eslint-plugin-security": "^1.4.0"
+  }
+}

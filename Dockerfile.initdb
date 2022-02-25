@@ -1,0 +1,7 @@
+FROM debian:stable-slim
+
+RUN apt update -y \
+    && apt install curl -y \
+    && curl https://binaries.cockroachdb.com/cockroach-v21.1.7.linux-amd64.tgz | tar -xz && cp -i cockroach-v21.1.7.linux-amd64/cockroach /usr/local/bin/
+
+CMD sleep 3 && echo Waiting for nodes spinup.... && sleep 10 && echo Init cluster... && cockroach init --insecure --host cdb-node_1 && echo Waiting for cluster init && sleep 10 && echo Init db scheme && cat initdb.sql | cockroach sql --insecure --url postgres://cdb-node_1:26257 && echo Goodbye!

@@ -1,0 +1,9 @@
+{
+    "embed": {
+      "title": "Biztonsági figyelmeztetés!",
+      "description": "Ez egy általános figyelmeztetés, a rendszer abnormális viselkedést detektált! \nTrigger: <@&XXX>",
+      "color": 16744448,
+      "fields": [
+      ]
+    }
+  }

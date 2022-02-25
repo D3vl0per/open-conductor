@@ -1,0 +1,9 @@
+{
+    "embed": {
+      "title": "Értesítés a hibajegy lezárásáról!",
+      "description": "A feladott hibajegye lezárásra került.\n\nA hibajegye részletei:",
+      "color": 65280,
+      "fields": [
+      ]
+    }
+  }

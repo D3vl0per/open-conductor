@@ -1,0 +1,10 @@
+{
+    "embed": {
+      "title": "Lekért adatok",
+      "description": "Az adatbázisban tárol adatok lekérése. \n\nKérem bánjon bizalmasan az adatokkal!!!",
+      "color": 1700030,
+      "thumbnail": {},
+      "fields": [
+      ]
+    }
+}

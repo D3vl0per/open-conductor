@@ -1,0 +1,110 @@
+version: "3.7"
+services:   
+  cdb-node_1:
+    image: registry.zsibok.hu/mirror/cockroachdb/cockroach:v21.1.8
+    volumes:
+      - ./cockroach-data/node1:/cockroach/cockroach-data
+    command: start --insecure --join=cdb-node_1,cdb-node_2,cdb-node_3   
+    networks:
+      - cockroach
+      - cockroach-init
+    ports:
+      - 127.0.0.1:8081:8080
+
+  cdb-node_2:
+    depends_on:
+      - cdb-node_1
+    image: registry.zsibok.hu/mirror/cockroachdb/cockroach:v21.1.8
+    volumes:
+      - ./cockroach-data/node2:/cockroach/cockroach-data
+    command: start --insecure --join=cdb-node_1,cdb-node_2,cdb-node_3
+    networks:
+      - cockroach
+    ports:
+      - 127.0.0.1:8082:8080
+
+  cdb-node_3:
+    depends_on:
+      - cdb-node_2
+    image: registry.zsibok.hu/mirror/cockroachdb/cockroach:v21.1.8
+    volumes:
+      - ./cockroach-data/node3:/cockroach/cockroach-data
+    command: start --insecure --join=cdb-node_1,cdb-node_2,cdb-node_3
+    networks:
+      - cockroach
+    ports:
+      - 127.0.0.1:8083:8080
+  
+  redis:
+    image: registry.zsibok.hu/mirror/redis/redis:6.2.5-alpine3.14
+    restart: always
+    command: --appendonly yes
+    expose:
+      -  6379
+    volumes:
+      - ./redis:/data:rw
+    environment:
+      - REDIS_REPLICATION_MODE=master
+    networks:
+      - redis
+  
+  db-proxy:
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges
+    image: registry.zsibok.hu/mirror/haproxy/haproxy:2.4.4-alpine3.14
+    restart: always
+    networks:
+      - cockroach
+      - proxy
+    expose:
+      - 26257
+    volumes:
+      - ./haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg:ro
+
+  conductor:
+    depends_on:
+      - db-proxy
+      - redis
+      - cdb-node_1
+    cap_drop:
+      - ALL
+    #cap_add:
+    #  - CAP_NET_RAW
+    security_opt:
+      - no-new-privileges
+    tmpfs:
+      - /tmp
+    image: registry.zsibok.hu/conductor/conductor:main
+    restart: always
+    env_file:
+      - .env
+    networks:
+      - proxy
+      - redis
+    volumes: 
+      - ./public.pem:/usr/src/conductor/public.pem:ro
+  
+  #!!!Comment this after the successful db init!!!
+  init-db-app:
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges
+    depends_on:
+      - cdb-node_1
+      - cdb-node_2
+      - cdb-node_3
+    image: registry.zsibok.hu/conductor/conductor:initdb
+    volumes:
+      - ./initdb.sql:/initdb.sql:ro
+    networks:
+      - cockroach-init
+  #!!!Comment this after the successful db init!!!
+
+networks:
+  cockroach-init:
+  cockroach:
+  redis:
+  proxy:

@@ -1,0 +1,17 @@
+{
+    "embed": {
+       "title": "Kilépett tag",
+       "description": ":outbox_tray: <@XXX> **távozott a szerverről**",
+       "color": 16711680,
+       "author": {
+       },
+       "thumbnail": {
+         "url": "XXX"
+       },
+       "footer": {
+         "text": "ID: XXX"
+       }
+     }
+ }
+ 
+ 

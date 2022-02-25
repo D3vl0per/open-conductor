@@ -1,0 +1,10 @@
+{
+    "embed": {
+      "title": "❗️ ❗️ ❗️Új ticket érkezett ❗️ ❗️ ❗️",
+      "description": "Új ticket érkezet, valamelyik felhasználónak szüksége van technikai segítségnyújtásra! \n\n Trigger: <@&XXX>",
+      "color": 	16711680,
+      "thumbnail": {},
+      "fields": [
+      ]
+    }
+}

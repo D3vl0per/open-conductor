@@ -1,0 +1,12 @@
+{
+    "embed": {
+      "title": "Scoreboard",
+      "url": "https://admin.hu",
+      "description": "A esemény döntőjének eredménytáblája!",
+      "thumbnail": {
+      },
+      "color": 16766720,
+      "fields": [
+      ]
+    }
+}

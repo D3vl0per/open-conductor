@@ -1,0 +1,9 @@
+{
+    "embed": {
+      "title": "Ticket lezárva! 😊",
+      "description": "Sikeresen lezárásra került a ticket!\n\nTrigger: <@&XXX>",
+      "color": 65280,
+      "fields": [
+      ]
+    }
+}

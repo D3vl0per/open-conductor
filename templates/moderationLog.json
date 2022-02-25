@@ -1,0 +1,9 @@
+{
+    "embed": {
+      "title": "❗️ ❗️ ❗️ Moderátori funkció futtatva ❗️ ❗️ ❗️",
+      "description": "Olyan parancs lett lefuttatva, amelyet csak privilegizált moderátorok tudnak futtatni és rossz kezekben katasztrófális problémákat lehet vele okozni.\n\n A transzparencia és visszaélések elkerülése érdekében minden moderátori parancs szigorúan logolva van!\n\n \"A nagy hatalommal nagy felelősség is jár!\" \n\nTrigger: <@&XXX>",
+      "color": 16386313,
+      "thumbnail": {},
+      "fields": []
+    }
+  }
