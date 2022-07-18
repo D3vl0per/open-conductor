@@ -15,7 +15,7 @@
     "url": "https://github.com/D3vl0per/open-conductor/issues"
   },
   "dependencies": {
-    "@discordjs/builders": "^0.6.0",
+    "@discordjs/builders": "^1.0.0",
     "blake2": "^4.0.2",
     "bufferutil": "^4.0.4",
     "dayjs": "^1.10.7",
