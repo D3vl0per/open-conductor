@@ -19,7 +19,7 @@
     "blake2": "^4.0.2",
     "bufferutil": "^4.0.4",
     "dayjs": "^1.10.7",
-    "discord-api-types": "^0.23.1",
+    "discord-api-types": "^0.37.4",
     "discord.js": "^13.1.0",
     "dotenv": "^10.0.0",
     "ioredis": "^4.27.10",
